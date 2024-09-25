@@ -1,0 +1,43 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "contact-point-use--4.3.0",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>Include all codes defined in <a href=\"codesystem-contact-point-use.html\"><code>http://hl7.org/fhir/contact-point-use</code></a></li></ul></div>"
+  },
+  "extension" : [ {
+    "url" : "http://hl7.org/fhir/tools/StructureDefinition/web-source",
+    "valueUrl" : "http://localhost:4200/fhir/ValueSet/contact-point-use"
+  } ],
+  "url" : "http://hl7.org/fhir/ValueSet/contact-point-use",
+  "identifier" : [ {
+    "system" : "urn:ietf:rfc:3986",
+    "value" : "urn:oid:2.16.840.1.113883.4.642.3.73"
+  } ],
+  "version" : "4.3.0",
+  "name" : "ContactPointUse",
+  "title" : "ContactPointUse",
+  "status" : "active",
+  "experimental" : false,
+  "publisher" : "HL7 (FHIR Project)",
+  "contact" : [ {
+    "telecom" : [ {
+      "system" : "url",
+      "value" : "http://hl7.org/fhir"
+    }, {
+      "system" : "email",
+      "value" : "fhir@lists.hl7.org"
+    } ]
+  } ],
+  "description" : "Use of contact point.",
+  "effectivePeriod" : {
+    "start" : "2024-09-03T00:00:00Z"
+  },
+  "compose" : {
+    "inactive" : false,
+    "include" : [ {
+      "system" : "http://hl7.org/fhir/contact-point-use",
+      "version" : "4.3.0"
+    } ]
+  }
+}
