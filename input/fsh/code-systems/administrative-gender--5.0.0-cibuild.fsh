@@ -1,7 +1,7 @@
 CodeSystem: AdministrativeGender
 Id: administrative-gender--5.0.0-cibuild
 Title: "AdministrativeGender"
-Description: "The gender of a person used for administrative purposes.111"
+Description: "The gender of a person used for administrative purposes."
 * ^language = #en
 * ^extension[0].url = "http://hl7.org/fhir/tools/StructureDefinition/web-source"
 * ^extension[=].valueUrl = "http://localhost:4200/fhir/CodeSystem/administrative-gender"
