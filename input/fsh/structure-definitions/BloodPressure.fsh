@@ -6,7 +6,7 @@ Id: BloodPressure
 * ^contact[0].name = "Taltech"
 * ^contact[=].telecom.system = #url
 * ^contact[=].telecom.value = "https://termx.org/"
-* ^contact[+].name = "Departament of Health Technologies 111"
+* ^contact[+].name = "Departament of Health Technologies 222"
 * ^contact[=].telecom.system = #email
 * ^contact[=].telecom.value = "mailto:igor.bossenko@taltech.ee"
 * patient 1..1 Reference(http://hl7.org/fhir/StructureDefinition/Patient) "Patient" "Subject of procedure."
