@@ -1,0 +1,107 @@
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "BloodPressure1",
+  "url" : "https://termx.org/Model/BloodPressure",
+  "name" : "BloodPressure1",
+  "publisher" : "TermX",
+  "contact" : [ {
+    "name" : "Taltech",
+    "telecom" : [ {
+      "system" : "url",
+      "value" : "https://termx.org/"
+    } ]
+  }, {
+    "name" : "Departament of Health Technologies 333",
+    "telecom" : [ {
+      "system" : "email",
+      "value" : "mailto:igor.bossenko@taltech.ee"
+    } ]
+  } ],
+  "fhirVersion" : "5.0.0",
+  "kind" : "logical",
+  "abstract" : false,
+  "type" : "https://termx.org/Model/BloodPressure",
+  "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Element",
+  "derivation" : "specialization",
+  "differential" : {
+    "element" : [ {
+      "definition" : "BloodPressure",
+      "id" : "BloodPressure1",
+      "path" : "BloodPressure1",
+      "short" : "BloodPressure"
+    }, {
+      "definition" : "Subject of procedure.",
+      "id" : "BloodPressure1.patient",
+      "max" : "1",
+      "min" : 1,
+      "path" : "BloodPressure1.patient",
+      "short" : "Patient",
+      "type" : [ {
+        "code" : "Reference",
+        "targetProfile" : [ "http://hl7.org/fhir/StructureDefinition/Patient" ]
+      } ]
+    }, {
+      "definition" : "The people who performed the procedure.",
+      "id" : "BloodPressure1.performer",
+      "max" : "1",
+      "min" : 0,
+      "path" : "BloodPressure1.performer",
+      "short" : "Performer",
+      "type" : [ {
+        "code" : "Reference",
+        "targetProfile" : [ "http://hl7.org/fhir/StructureDefinition/Practitioner", "http://hl7.org/fhir/StructureDefinition/PractitionerRole" ]
+      } ]
+    }, {
+      "definition" : "When the procedure was performed.",
+      "id" : "BloodPressure1.performed",
+      "max" : "1",
+      "min" : 1,
+      "path" : "BloodPressure1.performed",
+      "short" : "Effective time",
+      "type" : [ {
+        "code" : "dateTime"
+      } ]
+    }, {
+      "definition" : "The position of the individual at the time of measurement.",
+      "id" : "BloodPressure1.position",
+      "max" : "1",
+      "min" : 1,
+      "path" : "BloodPressure1.position",
+      "short" : "The position of the individual at the time of measurement.",
+      "type" : [ {
+        "code" : "Coding"
+      } ]
+    }, {
+      "definition" : "The actual numeric result of systolic blood pressure.",
+      "id" : "BloodPressure1.systolic",
+      "max" : "1",
+      "min" : 1,
+      "path" : "BloodPressure1.systolic",
+      "short" : "The actual numeric result of systolic blood pressure.",
+      "type" : [ {
+        "code" : "Quantity"
+      } ]
+    }, {
+      "definition" : "The actual numeric result of diastolic blood pressure.",
+      "id" : "BloodPressure1.diastolic",
+      "max" : "1",
+      "min" : 1,
+      "path" : "BloodPressure1.diastolic",
+      "short" : "The actual numeric result of diastolic blood pressure.",
+      "type" : [ {
+        "code" : "Quantity"
+      } ]
+    }, {
+      "definition" : "Comments about the observation",
+      "id" : "BloodPressure1.note",
+      "max" : "1",
+      "min" : 0,
+      "path" : "BloodPressure1.note",
+      "short" : "Comments about the observation",
+      "type" : [ {
+        "code" : "string"
+      } ]
+    } ]
+  },
+  "version" : "0.0.1"
+}
