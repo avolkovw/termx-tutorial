@@ -1,0 +1,133 @@
+{
+  "resourceType": "StructureMap",
+  "url": "http://termx.health/fhir/StructureMap/BP2O",
+  "name": "BP2O",
+  "status": "draft",
+  "group": [
+    {
+      "name": "example",
+      "input": [
+        {
+          "name": "BloodPressure",
+          "type": "BloodPressure",
+          "mode": "source"
+        },
+        {
+          "name": "Observation",
+          "type": "Observation",
+          "mode": "target"
+        }
+      ],
+      "rule": [
+        {
+          "name": "rule_8",
+          "source": [
+            {
+              "context": "BloodPressure"
+            }
+          ],
+          "target": [
+            {
+              "transform": "copy",
+              "parameter": [
+                {
+                  "valueId": "Observation"
+                }
+              ]
+            }
+          ],
+          "rule": [
+            {
+              "name": "dset_9",
+              "source": [
+                {
+                  "context": "BloodPressure",
+                  "element": "patient",
+                  "variable": "a"
+                }
+              ],
+              "target": [
+                {
+                  "context": "Observation",
+                  "element": "subject",
+                  "transform": "copy",
+                  "parameter": [
+                    {
+                      "valueId": "a"
+                    }
+                  ]
+                }
+              ],
+              "rule": [],
+              "dependent": []
+            }
+          ],
+          "dependent": []
+        },
+        {
+          "name": "rule_10",
+          "source": [
+            {
+              "context": "BloodPressure"
+            }
+          ],
+          "target": [
+            {
+              "transform": "copy",
+              "parameter": [
+                {
+                  "valueId": "Observation"
+                }
+              ]
+            }
+          ],
+          "rule": [
+            {
+              "name": "dset_11",
+              "source": [
+                {
+                  "context": "BloodPressure",
+                  "element": "performed",
+                  "variable": "a"
+                }
+              ],
+              "target": [
+                {
+                  "context": "Observation",
+                  "element": "effective",
+                  "transform": "copy",
+                  "parameter": [
+                    {
+                      "valueId": "a"
+                    }
+                  ]
+                }
+              ],
+              "rule": [],
+              "dependent": []
+            }
+          ],
+          "dependent": []
+        }
+      ]
+    }
+  ],
+  "contained": [],
+  "structure": [
+    {
+      "url": "https://termx.org/Model/BloodPressure",
+      "mode": "source",
+      "alias": "BloodPressure"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/Observation",
+      "mode": "target",
+      "alias": "Observation"
+    }
+  ],
+  "import": [],
+  "text": {
+    "status": "generated",
+    "div": "<div>\nmap \"http://termx.health/fhir/StructureMap/BP2O\" = \"BP2O\"\r\n\r\nuses \"https://termx.org/Model/BloodPressure\" alias BloodPressure as source\r\nuses \"http://hl7.org/fhir/StructureDefinition/Observation\" alias Observation as target\r\n\r\ngroup example(source BloodPressure : BloodPressure, target Observation : Observation) {\r\n  BloodPressure -> Observation then {\r\n    BloodPressure.patient as a -> Observation.subject = a \"dset_9\";\r\n  } \"rule_8\";\r\n  BloodPressure -> Observation then {\r\n    BloodPressure.performed as a -> Observation.effective = a \"dset_11\";\r\n  } \"rule_10\";\r\n}\r\n\r\n</div>"
+  }
+}
