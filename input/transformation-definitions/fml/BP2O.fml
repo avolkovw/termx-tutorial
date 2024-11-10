@@ -1,0 +1,19 @@
+map "http://termx.health/fhir/StructureMap/BP2O" = "BP2O"
+
+uses "https://termx.org/Model/BloodPressure" alias BloodPressure as source
+uses "http://hl7.org/fhir/StructureDefinition/Observation" alias Observation as target
+
+group example(source BloodPressure : BloodPressure, target Observation : Observation) {
+  BloodPressure -> Observation then {
+    BloodPressure.id as a -> Observation.id = a "dset_14";
+  } "rule_13";
+  BloodPressure -> Observation then {
+    BloodPressure.patient as a -> Observation.subject = a "dset_16";
+  } "rule_15";
+  BloodPressure -> Observation then {
+    BloodPressure.performed as a -> Observation.effective = a "dset_18";
+  } "rule_17";
+  BloodPressure -> Observation then {
+    BloodPressure.performer as a -> Observation.performer = a "dset_20";
+  } "rule_19";
+}
